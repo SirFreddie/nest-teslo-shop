@@ -33,6 +33,13 @@ export class AuthController {
     return this.authService.login(loginUserDto);
   }
 
+  // Esto es lo mismo que el renew token.
+  @Get('check-auth-status')
+  @Auth()
+  checkAuthStatus(@GetUser() user: User) {
+    return this.authService.checkAuthStatus(user);
+  }
+
   @Get('private')
   @UseGuards(AuthGuard())
   testingPrivateRoute(
