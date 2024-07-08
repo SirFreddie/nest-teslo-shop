@@ -30,9 +30,9 @@ import { MessagesWsModule } from './messages-ws/messages-ws.module';
       autoLoadEntities: true,
       synchronize: process.env.STAGE === 'production' ? false : true, // NO USAR EN PRODUCCIÓN
     }),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public'),
-    }),
+    // ServeStaticModule.forRoot({
+    //   rootPath: join(__dirname, '..', 'public'),
+    // }),
     ProductsModule,
     CommonModule,
     SeedModule,
